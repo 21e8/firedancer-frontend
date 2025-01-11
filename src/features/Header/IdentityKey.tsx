@@ -10,6 +10,7 @@ import { Duration } from "luxon";
 import { getFmtStake, getTimeTillText, slowDateTimeNow } from "../../utils";
 import { formatNumber } from "../../numUtils";
 import { useInterval, useUpdate, useWindowSize } from "react-use";
+import ValidatorSelector from "./ValidatorSelector";
 
 export default function IdentityKey() {
   const identityKey = useAtomValue(identityKeyAtom);
@@ -39,11 +40,7 @@ export default function IdentityKey() {
   return (
     <div className={styles.container}>
       <PeerIcon url={peer?.info?.icon_url} size={24} isYou />
-      <Label
-        label="Validator Name"
-        value={identityKeyLabel}
-        tooltip="The validators identity public key"
-      />
+      <ValidatorSelector />
       {!isXSmallScreen && (
         <>
           <StakeValue />

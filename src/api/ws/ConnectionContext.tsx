@@ -1,5 +1,5 @@
 import EventEmitter from "events";
-import { useSetAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import {
   PropsWithChildren,
   createContext,
@@ -9,7 +9,7 @@ import {
 } from "react";
 import connectWebSocket from "./connectWebSocket";
 import { ConnectionStatus, SendMessage, SocketState } from "./types";
-import { socketStateAtom } from "./atoms";
+import { socketStateAtom, websocketUrlAtom } from "./atoms";
 import UpdateAtoms from "../UpdateAtoms";
 
 interface ConnectionContextType {
@@ -36,9 +36,7 @@ export const messageEventType = "m";
 
 export function ConnectionProvider({ children }: PropsWithChildren) {
   const [ctxValue, _setCtxValue] = useState(defaultCtxValue);
-  // connect to current host via websocket
-  const websocketUrl = `wss://fd.juicystake.io/websocket`;
-  // const websocketUrl = `wss://fd-mainnet.stakingfacilities.com/websocket`;
+  const [websocketUrl, setWebsocketUrl] = useAtom(websocketUrlAtom);
 
   const setSocketState = useSetAtom(socketStateAtom);
 
@@ -59,6 +57,12 @@ export function ConnectionProvider({ children }: PropsWithChildren) {
     () => updateContext(defaultCtxValue),
     [updateContext]
   );
+
+  useEffect(() => {
+    setTimeout(() => {
+      setWebsocketUrl(`wss://fd-mainnet.stakingfacilities.com/websocket`);
+    }, 10000);
+  }, []);
 
   useEffect(() => {
     if (!websocketUrl) {
