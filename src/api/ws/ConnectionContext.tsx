@@ -59,12 +59,6 @@ export function ConnectionProvider({ children }: PropsWithChildren) {
   );
 
   useEffect(() => {
-    setTimeout(() => {
-      setWebsocketUrl(`wss://fd-mainnet.stakingfacilities.com/websocket`);
-    }, 10000);
-  }, []);
-
-  useEffect(() => {
     if (!websocketUrl) {
       resetContext();
       return;
