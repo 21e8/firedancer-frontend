@@ -20,21 +20,3 @@
   }
 }
 
-.container :global(.rt-SelectTrigger) {
-  background: transparent;
-  border: none;
-  color: var(--gray-12);
-  font-size: 14px;
-  padding: 0;
-  min-width: 150px;
-}
-
-.container :global(.rt-SelectContent) {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.container :global(.rt-SelectItem) {
-  font-size: 14px;
-  padding: 8px 12px;
-}
