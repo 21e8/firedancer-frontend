@@ -17,7 +17,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import NavigatePrev from "./NavigatePrev";
 import NavigateNext from "./NavigateNext";
 import { selectedSlotStrAtom } from "./atoms";
-import skippedIcon from "../../../assets/Skipped.svg";
+import skippedIcon from "../../../assets/skipped.svg";
 
 function getAllLeaderSlots(leaderSlots?: number[]) {
   return leaderSlots?.reduce<{ slot: number; order: number }[]>((acc, slot) => {
