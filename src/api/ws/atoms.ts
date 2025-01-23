@@ -6,24 +6,24 @@ export const socketStateAtom = atom<SocketState>(SocketState.Disconnected);
 
 const KNOWN_SOCKET_URLS = [
   {
-    name: "StakingFacilities",
-    url: `wss://fd-mainnet.stakingfacilities.com/websocket`,
+    name: "Asymmetric Research",
+    url: `wss://firedancer.asymmetric.re/websocket`,
+  },
+  {
+    name: "Cogent",
+    url: `wss://fd.cogentcrypto.io/websocket`,
   },
   {
     name: "JuicyStake",
     url: `wss://fd.juicystake.io/websocket`,
   },
   {
-    name: "Asymmetric Research",
-    url: `wss://firedancer.asymmetric.re/websocket`,
-  },
-  {
     name: "RockawayX",
     url: `wss://firedancer.rockawayx.com/websocket`,
   },
   {
-    name: "Cogent",
-    url: `wss://fd.cogentcrypto.io/websocket`,
+    name: "StakingFacilities",
+    url: `wss://fd-mainnet.stakingfacilities.com/websocket`,
   },
 ];
 
