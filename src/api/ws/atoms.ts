@@ -13,6 +13,10 @@ const KNOWN_SOCKET_URLS = [
     name: "JuicyStake",
     url: `wss://fd.juicystake.io/websocket`,
   },
+  {
+    name: "Asymmetric",
+    url: `wss://firedancer.asymmetric.re/websocket`,
+  },
 ];
 
 export const websocketUrlAtom = atom<string>(
