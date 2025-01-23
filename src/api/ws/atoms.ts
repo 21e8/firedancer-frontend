@@ -14,8 +14,16 @@ const KNOWN_SOCKET_URLS = [
     url: `wss://fd.juicystake.io/websocket`,
   },
   {
-    name: "Asymmetric",
+    name: "Asymmetric Research",
     url: `wss://firedancer.asymmetric.re/websocket`,
+  },
+  {
+    name: "RockawayX",
+    url: `wss://firedancer.rockawayx.com/websocket`,
+  },
+  {
+    name: "Cogent",
+    url: `wss://fd.cogentcrypto.io/websocket`,
   },
 ];
 
