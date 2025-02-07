@@ -22,6 +22,10 @@ const KNOWN_SOCKET_URLS = [
     url: `wss://firedancer.rockawayx.com/websocket`,
   },
   {
+    name: "Paragon",
+    url: `wss://fd.paragon.gdn/websocket`,
+  },
+  {
     name: "StakingFacilities",
     url: `wss://fd-mainnet.stakingfacilities.com/websocket`,
   },
